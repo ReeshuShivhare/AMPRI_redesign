@@ -1,16 +1,18 @@
-// Smooth Scroll for Anchor Links
+// Smooth Scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', e => {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
     });
 });
 
-// Initialize Carousel
+// Carousel Initialization
 $(document).ready(function() {
-    $('.carousel').carousel({
-        interval: 5000 // Slide every 5 seconds
-    });
+    $('#researchCarousel').carousel({ interval: 4000 });
+});
+
+// Form Submission Alert (Placeholder)
+$('#contactModal form').on('submit', function(e) {
+    e.preventDefault();
+    alert('Form submitted! (Placeholder for backend integration)');
 });
